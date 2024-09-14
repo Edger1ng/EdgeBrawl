@@ -1,0 +1,23 @@
+{
+  "MongoConnectionURL": "",
+
+  "StarPoints": 0,
+  "Tickets": 7000,
+  "Gold": 0,
+  "Gems": 1,
+  "Trophies": 0,
+  "ExperiencePoints": 999999,
+  "BrawlBoxTokens": 1000,
+  "BigBoxTokens": 10,
+  "Region": "RO",
+  "ThemeID": 12,
+  "ContentCreatorCodes": ["Edge", "Wert", "Garden"],
+  "BannedIPs": [],
+  "Maintenance": false,
+  "SecondsTillMaintenanceOver": 3600,
+  "Patch": false,
+  "PatchURL": "http://192.168.0.103:8080/",
+  "UpdateURL": "",
+  "TrophyTimer": 1719608566,
+  "PassTimer": 1719858933
+}
