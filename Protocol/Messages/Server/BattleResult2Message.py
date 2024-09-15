@@ -1,5 +1,5 @@
 from ByteStream.Writer import Writer
-
+import time
 
 class BattleResult2Message(Writer):
 
@@ -158,7 +158,18 @@ class BattleResult2Message(Writer):
                 league_m_trop = 1.30
                 gems = 0.9
             self.player.league_bank = self.player.league_bank + gems
-            self.player.league_points = self.player.league_points + 5
+            self.db.update_player_account(self.player.token, 'LeagueBank', self.player.league_bank)
+            if self.player.league_multiplier != 0:
+                 if self.player.league_m_time >= int(time.time()):
+                      league_multiplier = self.player.league_multiplier / 100
+                      league_points = 2 * league_multiplier
+                      self.player.league_points = self.player.league_points + league_points
+                 else:
+                      self.player.league_points = self.player.league_points + 5
+            else:
+                 self.player.league_points = self.player.league_points + 5
+            self.db.update_player_account(self.player.token, 'LeaguePoints', self.player.league_points)
+            #self.player.league_points = self.player.league_points + 5
             if league_m != 0:
                 league_m = league_m / 100
             else:
@@ -243,11 +254,17 @@ class BattleResult2Message(Writer):
                 league_m_trop = 1.30
                 gems = 0.6
             self.player.league_bank = self.player.league_bank + gems
-            self.player.league_points = self.player.league_points + 2
-            if league_m != 0:
-                league_m = league_m / 100
+            if self.player.league_multiplier != 0:
+                 if self.player.league_m_time >= int(time.time()):
+                      league_multiplier = self.player.league_multiplier / 100
+                      league_points = 2 * league_multiplier
+                      self.player.league_points = self.player.league_points + league_points
+                 else:
+                      self.player.league_points = self.player.league_points + 2
             else:
-                 pass
+                 self.player.league_points = self.player.league_points + 2
+            self.db.update_player_account(self.player.token, 'LeaguePoints', self.player.league_points)
+            #self.player.league_points = self.player.league_points + 2
             trop = win
             tkns = 200 * multplier
             tkns2 = 80 * multplier
