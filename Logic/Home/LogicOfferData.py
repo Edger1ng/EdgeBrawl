@@ -108,18 +108,18 @@ class LogicOfferData:
                 else:
                     seid = False
             else:
-                if (x['Required'] != 0):
+                if (x['Required'] != ""):
                     if (x['Required'] in self.player.buyed):
                         seid = False
                         print("Required None")
                     if (x['Required'] not in self.player.buyed):
                         seid = True
                         print("Required")
-                if (x['PremiumOffer'] == True):
-                    if self.player.premium == False:
-                        seid = True
-                    else:
+                if (x['LeagueOffer'] == True):
+                    if self.player.league in x['LeagueSee']:
                         seid = False
+                    else:
+                        forced = True
             if forced:
                 self.writeBoolean(True)
             else:

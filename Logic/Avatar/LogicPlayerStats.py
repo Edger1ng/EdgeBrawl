@@ -14,7 +14,7 @@ class LogicPlayerStats:
             'SoloVictories': accountData['SoloWins'],
             'HighestRoboRumbleLvlPassed': 21,
             'Unknown3': 0,
-            'DuoVictories': 0,
+            'DuoVictories': accountData['Wins'],
             'HighestBossFightLvlPassed': 21,
             'Unknown4': 0,
             'PowerPlayRank': accountData['LeaguePoints'],
