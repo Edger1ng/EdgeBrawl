@@ -113,6 +113,9 @@ class Helpers:
         self.player.freeze_security = player_data['FreezeSecurity']
         self.player.freeze_time = player_data['FreezeTime']
         self.player.wins = player_data['Wins']
+        self.player.trio_wins = player_data['3v3Wins']
+        self.player.solo_wins = player_data['SoloWins']
+        self.player.event_points = player_data['EventPoints'] 
         
 
 
