@@ -104,6 +104,17 @@ class Helpers:
         self.player.bpfree_claimed = player_data['FreePassClaimed']
         self.player.bpdonate_claimed = player_data['DonatePassClaimed']
         self.player.reserve_tokens = player_data['ReserveTokens']
+        self.player.league = player_data['League']
+        self.player.league_points = player_data['LeaguePoints']
+        self.player.league_multiplier = player_data['LeagueMultiplierPercent']
+        self.player.league_m_time = player_data['LeagueMultiplierTime']
+        self.player.league_bank = player_data['LeagueBank']
+        self.player.needupdate = player_data['NeedToUpgradeLvl']
+        self.player.freeze_security = player_data['FreezeSecurity']
+        self.player.freeze_time = player_data['FreezeTime']
+        self.player.wins = player_data['Wins']
+        
+
 
     def load_club(self, club_data):
         try:
