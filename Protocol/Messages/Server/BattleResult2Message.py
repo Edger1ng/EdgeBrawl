@@ -187,6 +187,28 @@ class BattleResult2Message(Writer):
                  wintr = wintr * league_m_trop
             else:
                  pass
+            self.player.wins = self.player.wins + 1
+            self.player.solo_wins = self.player.solo_wins + 1
+            self.db.update_player_account(self.player.token, '3v3Wins', self.player.solo_wins)
+            self.db.update_player_account(self.player.token, 'Wins', self.player.wins)
+            if self.player.wins == 2:
+                 wintr = wintr + 1
+            if self.player.wins == 3:
+                 wintr = wintr + 2
+            if self.player.wins == 4:
+                 wintr = wintr + 3
+            if self.player.wins == 5:
+                 wintr = wintr + 4
+            if self.player.wins == 6:
+                 wintr = wintr + 5
+            if self.player.wins == 7:
+                 wintr = wintr + 6
+            if self.player.wins == 8:
+                 wintr = wintr + 7
+            if self.player.wins >= 9:
+                 wintr = wintr + 8
+            else:
+                 pass
             if self.player.pass_tokens >= 34500:
                 self.player.reserve_tokens = self.player.reserve_tokens + tkns2
                 self.db.update_player_account(self.player.token, 'ReserveTokens', self.player.reserve_tokens)
