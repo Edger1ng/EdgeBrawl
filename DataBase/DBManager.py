@@ -74,7 +74,11 @@ class DB:
             'NeedToUpgradeLvl': False,
             'FreezeSecurity': False,
             'FreezeMode': 0,
-            'FreezeToTime': 0,
+            'FreezeTime': 0,
+            'Wins': 0,
+            '3v3Wins': 0,
+            'SoloWins': 0,
+            'EventPoints': 0,
             'Airblank': 0
         }
 
